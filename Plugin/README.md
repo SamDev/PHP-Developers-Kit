@@ -4,7 +4,8 @@ This kit allowing you to implement a plugins system/feature within you php appli
 
 ## Step By Step
 1. You need to include this kit within your application
-``` php
+<br />
+```php
 <?php
 require_once 'plugin.kit.php';
 ```
