@@ -51,12 +51,6 @@ namespace DevKit {
 		 */
 		 private static $hookedFilters;
 		 
-		 
-		 /**
-		  * 
-		  */
-		  
-		  private $secretValue = 'Password ;)';
 		
 		/**********************************/
 		
