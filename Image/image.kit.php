@@ -130,9 +130,9 @@ class Image
 		}
 		else
 		{
-			$color = im
+			$color = '';
 			//Regular String	
-			imagestring($this->resource, $size, $position[0], $position[1], $text, $color)
+			imagestring($this->resource, $size, $position[0], $position[1], $text, $color);
 		}
 	}
 	
