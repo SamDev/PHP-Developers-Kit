@@ -81,6 +81,7 @@ class Session
     
 	public static function restart()
 	{
+		session_regenerate_id(true);
 		self::destroy();
 		
 	}
@@ -115,9 +116,20 @@ class Session
 	/**
 	 * Get value of a specific session variable name
 	 * 
-	 * @
+	 * @param $name session variable name
+	 * 
+	 * @access public 
+	 * 
+	 * @return mixed
+	 * 
+	 * @since 0.1
 	 */
-	public static function get($name){}
+	public static function get($name)
+	{
+		
+	}
+	
+	/*******************************************/
 	
 	public static function delete($name)
 	{
