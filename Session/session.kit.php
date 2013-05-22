@@ -33,12 +33,12 @@ class Session
 		{
 			//Force a new Id
 			if($forceNew) {session_regenerate_id(true);}
-        }
-        else
-        {
-           //No Session yet, lets start it
-           session_start();
-        }	
+		}
+		else
+		{
+			//No Session yet, lets start it
+			session_start();
+		}	
 	}
     
     /*******************************************/
