@@ -1,15 +1,14 @@
-# Plugins Kit
+#Session Class Manager
+With this class you can manage Sessions easily, and here is a guide to take you through this class usage.
 
-This kit allowing you to implement a plugins system/feature within you php applications using events and filter
-
-## Step By Step
-1 . You need to include this kit within your application
+##Step By Step
+1 . You need to include this file within your script
 ```php
 <?php
-require_once 'plugin.kit.php';
+require_once 'session.kit.php';
 ```
-2 . Now it's the time to Start your Session
+2 . Now it's the time to Create your Session
 ```php
-<?php
+<?php 
 $session = new Session();
-``` 
+```
