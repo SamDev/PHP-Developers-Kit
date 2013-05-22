@@ -48,8 +48,8 @@ class Session
 		return session_id();
 	}
 
-    /*******************************************/
-	
+	/*******************************************/
+		
 	public static function destroy()
 	{
 		//Session Started
