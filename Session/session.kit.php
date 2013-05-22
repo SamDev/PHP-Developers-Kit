@@ -41,7 +41,7 @@ class Session
 		}	
 	}
     
-    /*******************************************/
+	/*******************************************/
 		
 	public static function id()
 	{
@@ -61,7 +61,7 @@ class Session
 		}
 	}
     
-    /*******************************************/
+	/*******************************************/
 	
 	/**
 	 * Check whether session stated or no
@@ -77,15 +77,15 @@ class Session
 		return (session_id() == "") ? false : true;
 	}
 	
-    /*******************************************/
+	/*******************************************/
     
 	public static function restart()
 	{
 		self::destroy();
 		
-    }
+	}
 	
-    /*******************************************/
+	/*******************************************/
 	
 	/**
 	 * Format Session Index Name to allow un-case-sensative feature
@@ -93,14 +93,14 @@ class Session
 	 * @param $name string the index name
 	 * 
 	 * @return string reformatted index
-     * 
-     * @access protected
+	 * 
+	 * @access protected
 	 * 
 	 * @since 0.1
 	 */
 	protected static function format($name){return strtoupper(str_replace(' ', '_', $name));}
     
-    /*******************************************/
+	/*******************************************/
 	
 	/**
 	 * 
@@ -110,7 +110,7 @@ class Session
 		return session_register(self::format($name), $value);
 	}
 	
-    /*******************************************/
+	/*******************************************/
 	
 	/**
 	 * Get value of a specific session variable name
@@ -128,14 +128,14 @@ class Session
 		return false;
 	}
     
-    /*******************************************/
+	/*******************************************/
 	
 	public static function exists($name)
 	{
 		return (isset($_SESSION[self::format($name)])) ? true : false;
 	}
     
-    /*******************************************/
+	/*******************************************/
 }
 
 
