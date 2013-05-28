@@ -17,7 +17,7 @@
 namespace DevKit {
 	
 	/**
-	 * Plugins Class which resposible for managing the whole plugins system, 
+	 * Plug-ins Class which resposible for managing the whole plugins system, 
 	 * allowing you to configure how system works as well
 	 * 
 	 * @version 0.1

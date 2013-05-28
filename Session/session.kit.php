@@ -16,7 +16,6 @@
  */
 class Session
 {
-	
 	/**
 	 * Class Constructor for Starting a new Session
 	 * 
@@ -42,7 +41,32 @@ class Session
 	}
     
 	/*******************************************/
-		
+	
+	/**
+	 * Handle it When Object Used as String
+	 * 
+	 * @return string
+	 * 
+	 * @access public
+	 * 
+	 * @since 0.1
+	 */
+	 public function __toString()
+	 {
+	 	if(self::started()){return self::id();}
+	 }
+	
+	/*******************************************/
+	
+	/**
+	 * Return Session Id
+	 * 
+	 * @return string
+	 * 
+	 * @access public
+	 * 
+	 * @
+	 */
 	public static function id()
 	{
 		return session_id();
@@ -79,6 +103,15 @@ class Session
 	
 	/*******************************************/
     
+    /**
+	 * Restart Session System by generating a new Id and remove session file and return the new Id
+	 * 
+	 * @return string
+	 * 
+	 * @access public
+	 * 
+	 * @since 0.1 
+	 */
 	public static function restart()
 	{
 		session_regenerate_id(true);
@@ -89,7 +122,7 @@ class Session
 	/*******************************************/
 	
 	/**
-	 * Format Session Index Name to allow un-case-sensative feature
+	 * Format Session Index Name to allow non-case-sensitive feature
 	 * 
 	 * @param $name string the index name
 	 * 
@@ -104,11 +137,21 @@ class Session
 	/*******************************************/
 	
 	/**
+	 * Add or Update a Session Value
 	 * 
+	 * @param $name string the name of variable of identifier
+	 * 
+	 * @param $value mixed The Actual Value
+	 * 
+	 * @return mixed
+	 * 
+	 * @access public
+	 * 
+	 * @since 0.1
 	 */
 	public static function set($name, $value)
 	{
-		return session_register(self::format($name), $value);
+		return $_SESSION[self::format($name)] = $value;
 	}
 	
 	/*******************************************/
@@ -126,11 +169,26 @@ class Session
 	 */
 	public static function get($name)
 	{
-		
+		if(self::exists($name))
+		{
+			return $_SESSION[self::format($name)];
+		}
+		return false;
 	}
 	
 	/*******************************************/
 	
+	/**
+	 * Remove a Session Variable
+	 * 
+	 * @param $name The var name to remove
+	 * 
+	 * @access public
+	 * 
+	 * @return boolean
+	 * 
+	 * @since 0.1
+	 */
 	public static function delete($name)
 	{
 		if(self::exists($name))
@@ -142,6 +200,17 @@ class Session
     
 	/*******************************************/
 	
+	/**
+	 * Check whethere a variable exist in session or not
+	 * 
+	 * @param $name The Variable Name
+	 * 
+	 * @access public
+	 * 
+	 * @return boolean
+	 * 
+	 * @since 0.1
+	 */
 	public static function exists($name)
 	{
 		return (isset($_SESSION[self::format($name)])) ? true : false;
